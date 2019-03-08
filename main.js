@@ -66,5 +66,3 @@ $("body").on("click", ".calculate", function (e) {
 
 	$("#post_total").find("span").text(post_total)
 });
-
-//below here is fucked up
