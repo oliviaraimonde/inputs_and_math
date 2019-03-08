@@ -33,13 +33,38 @@ $("body").on("click", ".calculate", function (e) {
 
 	let pre_total = 0;
 	$(".pre_total").each(function () {
-		const $this_pre_total = $(this);
-		const $this_pre_total_span = $this_pre_total.find("span");
-
+		const $this_div = $(this);
+		const $this_pre_total_span = $this_div.find("span");
+		const $span_pre_total = $this_div.find("#pre_total").find("span");
 		let value = $this_pre_total_span.text();
 		value = parseFloat(value);
 		pre_total = pre_total + value;
+
 	});
 	console.log("Working!");
 	console.log(pre_total);
+
+	$("#pre_total").find("span").text(pre_total)
+
+
 });
+
+$("body").on("click", ".calculate", function (e) {
+	e.preventDefault();
+
+	let post_total = 0;
+	$(".post_total").each(function () {
+		const $this_post_total = $(this);
+		const $this_post_total_span = $this_post_total.find("span");
+		let value = $this_post_total_span.text();
+		value = parseFloat(value);
+		post_total = post_total + value;
+
+	});
+	console.log("You did it!");
+	console.log(post_total);
+
+	$("#post_total").find("span").text(post_total)
+});
+
+//below here is fucked up
